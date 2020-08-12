@@ -4,7 +4,7 @@ Post - {{ post.title_tag }}
 {% endblock %}
 
 {% block content %}
-<br>
+
 <h1>{{ post.title }}</h1>
 <small>By: {{ post.author.first_name }} {{ post.author.last_name }}</small>
 <hr>
@@ -13,4 +13,5 @@ Post - {{ post.title_tag }}
 <br><br>
 <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">Back</a>
 <a href="{% url 'update_post' post.pk %}" type="button" class="btn btn-primary btn-sm">Edit</a>
+<a href="{% url 'delete_post' post.pk %}" type="button" class="btn btn-danger btn-sm">Delete</a>
 {% endblock %}
