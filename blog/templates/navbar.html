@@ -12,13 +12,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto mx-auto">
             <li class="nav-item {% if request.path == home %} active {% endif %}">
-                <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item {% if request.path == add_post %} active {% endif %}">
-                <a class="nav-link" href="{% url 'add_post' %}">ADD POST</a>
+                <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
             </li>
             <li class="nav-item {% if request.path == about %} active {% endif %}">
-                <a class="nav-link" href="#">ABOUT</a>
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item {% if request.path == about %} active {% endif %}">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
         </ul>
     </div>
