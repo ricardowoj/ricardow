@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Post</h1>
+<h1>My Post's</h1>
 <ul>
     {% for post in object_list %}
     <br>
     <li>
         <h3><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h3>
         <br>
-        <h4>{{ post.body }}</h4>
+        <h4>{{ post.body | slice:":200" }}</h4>
         <p><small>{{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}</small></p>
     </li>
     <hr>

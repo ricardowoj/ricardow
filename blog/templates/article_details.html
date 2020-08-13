@@ -11,7 +11,7 @@ Post - {{ post.title_tag }}
 </small>
 <hr>
 <br>
-{{ post.body }}
+{{ post.body | safe }}
 <br><br>
 <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">Back</a>
 
