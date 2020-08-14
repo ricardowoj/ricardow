@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>My Post's</h1>
+
+<h1>Category posts: {{ category }}</h1>
+
 <ul>
-    {% for post in object_list %}
+    {% for post in category_posts  %}
     <br>
     <li>
         <h3><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h3>
-        <p>Catategory: <a href="{% url 'category' post.category %}" class="">{{ post.category }}</a></p>
-
         <br>
         <h4>{{ post.body | slice:":200" }}</h4>
         <p><small>{{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}</small></p>
     </li>
     <hr>
     {% endfor %}
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-sm">Back</a>
 </ul>
+
 {% endblock %}
